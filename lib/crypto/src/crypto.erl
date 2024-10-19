@@ -861,12 +861,12 @@ algorithms.
 -define(CURVES, '$curves$').
 
 -doc(#{title => <<"Utility Functions">>}).
-supports(hashs)       -> hash_algorithms();
-supports(public_keys) -> pubkey_algorithms();
-supports(ciphers)     -> add_cipher_aliases(cipher_algorithms());
-supports(macs)        -> mac_algorithms();
-supports(curves)      -> curve_algorithms();
-supports(rsa_opts)    -> rsa_opts_algorithms().
+supports(hashs)       -> logger:error("Supporting Hashes"), hash_algorithms();
+supports(public_keys) -> logger:error("Supporting pubkey"), pubkey_algorithms();
+supports(ciphers)     -> logger:error("Supporting ciphers"), add_cipher_aliases(cipher_algorithms());
+supports(macs)        -> logger:error("Supporting macs"), mac_algorithms();
+supports(curves)      -> logger:error("Supporting curves"), curve_algorithms();
+supports(rsa_opts)    -> logger:error("Supporting rsa_opts"), rsa_opts_algorithms().
 
 -doc(#{title => <<"Utility Functions">>}).
 -doc """
