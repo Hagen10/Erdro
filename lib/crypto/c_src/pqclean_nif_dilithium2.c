@@ -67,7 +67,7 @@ pqclean_nif_dilithium2_keypair_0(ErlNifEnv *env, int argc, const ERL_NIF_TERM ar
                              PQCLEAN_DILITHIUM2_CLEAN_CRYPTO_SECRETKEYBYTES);
     }
 
-    retval = PQCLEAN_DILITHIUM2_CLEAN_crypto_sign_keypair(pk, sk);
+    retval = OQS_SIG_dilithium_2_keypair(pk, sk);
     if (retval != 0) {
         return EXCP_ERROR(env, "Call to PQCLEAN_DILITHIUM2_CLEAN_crypto_sign_keypair() failed");
     }
@@ -100,7 +100,7 @@ pqclean_nif_dilithium2_sign_2(ErlNifEnv *env, int argc, const ERL_NIF_TERM argv[
                              PQCLEAN_DILITHIUM2_CLEAN_CRYPTO_BYTES);
     }
 
-    retval = PQCLEAN_DILITHIUM2_CLEAN_crypto_sign_signature(sig, &siglen, m_bin.data, m_bin.size, sk_bin.data);
+    retval = OQS_SIG_dilithium_2_sign(sig, &siglen, m_bin.data, m_bin.size, sk_bin.data);
     if (retval != 0) {
         return EXCP_ERROR(env, "Call to PQCLEAN_DILITHIUM2_CLEAN_crypto_sign_signature() failed");
     }
@@ -133,7 +133,7 @@ pqclean_nif_dilithium2_verify_3(ErlNifEnv *env, int argc, const ERL_NIF_TERM arg
                              PQCLEAN_DILITHIUM2_CLEAN_CRYPTO_PUBLICKEYBYTES);
     }
 
-    retval = PQCLEAN_DILITHIUM2_CLEAN_crypto_sign_verify(sig_bin.data, sig_bin.size, m_bin.data, m_bin.size, pk_bin.data);
+    retval = OQS_SIG_dilithium_2_verify(sig_bin.data, sig_bin.size, m_bin.data, m_bin.size, pk_bin.data);
     if (retval != 0) {
         return ATOM(false);
     }
