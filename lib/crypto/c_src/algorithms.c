@@ -192,6 +192,8 @@ void init_pubkey_types(ErlNifEnv* env) {
 #endif
     algo_pubkey[algo_pubkey_cnt++] = enif_make_atom(env, "srp");
 
+    algo_pubkey[algo_pubkey_cnt++] = enif_make_atom(env, "dilithium2");
+
     ASSERT(algo_pubkey_cnt <= sizeof(algo_pubkey)/sizeof(ERL_NIF_TERM));
 }
 

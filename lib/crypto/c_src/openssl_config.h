@@ -50,6 +50,7 @@
 #include <openssl/evp.h>
 #include <openssl/hmac.h>
 #include <openssl/err.h>
+#include <oqs/sig_dilithium.h>
 
 #if OPENSSL_VERSION_NUMBER >= PACKED_OPENSSL_VERSION_PLAIN(3,0,0)
 # define HAS_3_0_API

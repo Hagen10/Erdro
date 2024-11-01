@@ -256,7 +256,7 @@ static int initialize(ErlNifEnv* env, ERL_NIF_TERM load_info)
     if (!(prov[prov_cnt++] = OSSL_PROVIDER_load(NULL, "default"))) {
         ret = __LINE__; goto done;
     }
-    if (!(prov[prov_cnt++] = OSSL_PROVIDER_load(NULL, "base"))) {
+    if (!(prov[prov_cnt++] = OSSL_PROVIDER_load(NULL, "oqsprovider"))) {
         ret = __LINE__; goto done;
     }
     if ((prov[prov_cnt] = OSSL_PROVIDER_load(NULL, "legacy"))) {
