@@ -3,6 +3,10 @@
 // #include <crypto_sign/dilithium2/clean/api.h>
 
 /* NIF Function Definitions */
+#define PQCLEAN_DILITHIUM2_CLEAN_CRYPTO_PUBLICKEYBYTES 1312
+#define PQCLEAN_DILITHIUM2_CLEAN_CRYPTO_SECRETKEYBYTES 2528
+#define PQCLEAN_DILITHIUM2_CLEAN_CRYPTO_BYTES 2420
+#define PQCLEAN_DILITHIUM2_CLEAN_CRYPTO_ALGNAME "Dilithium2"
 
 ERL_NIF_TERM
 pqclean_nif_dilithium2_info_0(ErlNifEnv *env, int argc, const ERL_NIF_TERM argv[])
